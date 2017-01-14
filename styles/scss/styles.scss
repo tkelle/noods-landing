@@ -1,0 +1,202 @@
+/* Importing utilities and basic bulding blocks */
+
+@import 'utilities';
+@import 'fonts';
+@import 'colors';
+@import 'typography';
+@import 'navigation';
+@import 'slider';
+@import 'tiles';
+
+/* Main styling begins */
+
+html {
+	background: $white;
+}
+
+// Background container
+
+.bgContainer {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+
+// Main container
+
+.mainContainer {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	padding: 1rem;
+	border: 1rem solid $black;
+	overflow: scroll;
+	z-index: 999;
+}
+
+// Inner container for content
+
+.innerContainer {
+	width: 100%;
+	float: left;
+}
+
+// Content rows
+
+.row {
+	width: 100%;
+	margin-bottom: 10rem;
+	// overflow: auto;
+	clear: both;
+	float: left;
+}
+
+.row--right {
+	padding-left: 20%;
+}
+
+.row--left {
+	padding-right: 20%;
+	padding-left: 10%;
+}
+
+// Poster
+
+.poster {
+	width: 50%;
+	float: left;
+}
+
+.poster--image {
+	display: block;
+
+	& img {
+		width: 100%;
+	}
+}
+
+.poster--metadata {
+	padding-left: 1rem;
+	// text-shadow: 
+	// 	0px 2px 2px $white, 
+	// 	0px -2px 2px $white,
+	// 	2px 0px 2px $white,
+	// 	-2px 0px 2px $white;
+}
+
+.event__title {
+	font-family: Chivo;
+	color: $black;
+	font-size: 2rem;
+	font-weight: 600;
+	display: block;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.event__artists {
+	font-family: Chivo;
+	color: $black;
+	font-size: 1.5rem;
+	font-weight: 400;
+	display: block;
+	margin-bottom: 1rem;
+
+	& span {
+		display: block;
+	}
+}
+
+.event__location {
+	font-family: Chivo;
+	color: $black;
+	font-size: 1.5rem;
+	font-weight: 400;
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.event__date {
+	font-family: Chivo;
+	color: $black;
+	font-size: 1.5rem;
+	font-weight: 400;
+	display: block;
+	margin-bottom: 1rem;
+	position: relative;
+}
+
+// .event__date--date {
+// 	position: relative;
+
+// 	&:before {
+// 		content: ' ';
+// 		position: absolute;
+// 		left: -1rem;
+// 		width: 1.5rem;
+// 		height: 1.5rem;
+// 		background-size: 1rem;
+// 		background-position: center;
+// 		background-repeat: no-repeat;
+// 		background-image: url(../../img/icons/calendar.svg);
+// 	}
+// }
+
+// .event__date--time {
+// 	position: relative;
+
+// 	&:before {
+// 		content: ' ';
+// 		position: absolute;
+// 		left: -1rem;
+// 		width: 1.5rem;
+// 		height: 1.5rem;
+// 		background-size: 1rem;
+// 		background-position: center;
+// 		background-repeat: no-repeat;
+// 		background-image: url(../../img/icons/clock.svg);
+// 	}
+// }
+
+.event__price {
+	font-family: Chivo;
+	color: $black;
+	font-size: 1.5rem;
+	font-weight: 400;
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.event__description {
+	width: 80%;
+	font-family: Chivo;
+	color: $black;
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+	font-weight: 400;
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.event__link {
+	text-decoration: none;
+	font-family: Chivo;
+	color: $black;
+	font-size: 1.2rem;
+	font-weight: 400;
+
+	&:active, &:visited {
+		text-decoration: none;
+		color: $black;
+	}
+}
+
+.randomBgImage {
+	position: absolute;
+}
+
+.parallaxWrapper {
+	
+}
+
+

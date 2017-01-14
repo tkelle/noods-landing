@@ -1,0 +1,20 @@
+// Typography
+
+.title {
+	font-family: Rakkas;
+	color: $black;
+}
+
+.title--rowTitle {
+	display: block;
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.title--large {
+	font-size: 4rem;
+}
+
+.title--small {
+	font-size: 2rem;
+}

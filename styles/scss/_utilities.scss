@@ -1,0 +1,53 @@
+// Applying border-box model to all elements
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// Better font smoothing for webkit based browsers
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+// Breakpoints
+
+@mixin breakpoint($class) {
+  @if $class == sm {
+    @media (max-width: 568px) { @content; }
+  }
+
+  @else if $class == md {
+    @media (max-width: 768px) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (max-width: 1024px) { @content; }
+  }
+
+  @else if $class == xl {
+    @media (min-width: 1025px) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xsmall, small, medium, large";
+  }
+}
+
+// Transitions
+
+@mixin transition-sm {
+  transition: ease-in-out 100ms;
+}
+
+@mixin transition-md {
+  transition: ease-in-out 300ms;
+}
+
+@mixin transition-lg {
+  transition: ease-in-out 500ms;
+}

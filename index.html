@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Noods Radio</title>
+	<!-- Load CSS resets from CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+	<!-- Load in styles -->
+	<link rel="stylesheet" href="styles/css/styles.css">
+	<!-- Favicons -->
+	<link rel="icon" type="image/png" href="img/favicon.png"/>
+	<!-- Load in jQuery from CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<!-- JS Parallax libraries -->
+	<script src="js/jquery.parallax.js"></script>
+	<script src="js/requestAnimationFrame.js"></script>
+</head>
+<body>
+	<!-- BG container -->
+	<div id="bgScene" class="bgContainer">
+		<div class="randomBgImage">
+			<img class="layer" data-depth="0.20" src="img/backgrounds/blurdot-red.png" alt="">
+		</div>
+		<div class="randomBgImage">
+			<img class="layer" data-depth="0.40" src="img/backgrounds/gridwarp.png" alt="">
+		</div>
+		<div class="randomBgImage">
+			<img class="layer" data-depth="0.60" src="http://lorempixel.com/300/300/animals/" alt="">
+		</div>
+		<div class="randomBgImage">
+			<img class="layer" data-depth="0.80" src="http://lorempixel.com/300/300/animals/" alt="">
+		</div>
+		<div class="randomBgImage">
+			<img class="layer" data-depth="1.00" src="http://lorempixel.com/300/300/animals/" alt="">
+		</div>
+	</div>
+	<!-- BG container ends -->
+	<!-- Main container -->
+	<div class="mainContainer">
+		<!-- Sidebar navigation -->
+		<nav class="navContainer">
+			<ul class="navList pure-u-1">
+				<!-- <li class="navList__item">
+					<img src="img/nav-logo.png" alt="" class="navList__logo">
+				</li> -->
+				<li class="navList__item">
+					<a href="#" class="navList__link">
+						Shows
+					</a>
+				</li>
+				<li class="navList__item">
+					<a href="#" class="navList__link">
+						Events
+					</a>
+				</li>
+				<li class="navList__item">
+					<a href="#" class="navList__link">
+						Residents
+					</a>
+				</li>
+				<li class="navList__item">
+					<a href="#" class="navList__link">
+						Store
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- Sidebar navigation ends -->
+		<!-- Inner container for content -->
+		<div id="contentScene" class="innerContainer" data-invert-x="true" data-invert-y="true">
+			<!-- Slider section -->
+			<section class="row row--right row--slider">
+				<h1 class="title title--large title--rowTitle">News</h1>
+				<div class="slide">
+					<div class="slide__background">
+						<img src="img/bibio.jpg" alt="" class="slide__image">
+					</div>
+					<div class="slide__content">
+						<h2 class="title title--small title--slide">
+							Testing
+						</h2>
+						<p class="slide__copy">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, perspiciatis?
+						</p>
+					</div>
+				</div>	
+			</section>
+			<!-- Slider section ends -->
+			<!-- Latest shows -->
+			<section class="row row--left row--shows">
+				<h1 class="title title--large title--rowTitle">Latest shows</h1>
+				<div class="tile">
+					<div class="tile__sizer">
+						<div class="tile__background">
+							<img src="img/bibio.jpg" alt="" class="tile__image">
+						</div>
+						<div class="tile__content">
+							<h2 class="title title--small title--slide">
+								Bruce
+							</h2>
+							<p class="slide__copy">
+								01.01.2017
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="tile">
+					<div class="tile__sizer">
+						<div class="tile__background">
+							<img src="img/bibio.jpg" alt="" class="tile__image">
+						</div>
+						<div class="tile__content">
+							<h2 class="title title--small title--slide">
+								Crosspolar w/ Sangam
+							</h2>
+							<p class="slide__copy">
+								23.12.2016
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="tile">
+					<div class="tile__sizer">
+						<div class="tile__background">
+							<img src="img/bibio.jpg" alt="" class="tile__image">
+						</div>
+						<div class="tile__content">
+							<h2 class="title title--small title--slide">
+								Team w/ Luke G
+							</h2>
+							<p class="slide__copy">
+								30.10.16
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="tile">
+					<div class="tile__sizer">
+						<div class="tile__background">
+							<img src="img/bibio.jpg" alt="" class="tile__image">
+						</div>
+						<div class="tile__content">
+							<h2 class="title title--small title--slide">
+								Team w/ Luke G
+							</h2>
+							<p class="slide__copy">
+								30.10.16
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="tile tile--viewAll">
+					<div class="tile__sizer tile__sizer--viewAll">
+						<div class="tile__content">
+							<h2 class="title title--slide title--viewAll">
+								View more
+							</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Latest shows ends -->
+			<!-- Upcoming event -->
+			<section class="row row--right row--event">
+				<div class="poster poster--image">
+					<img src="img/poster.jpg" alt="" class="poster__image">
+				</div>
+				<div class="poster poster--metadata">
+					<h1 class="title title--large">Coming up</h1>
+					<h2 class="event__title">
+						New Years Day: Sunday Seshwan
+					</h2>
+					<p class="event__date">
+						<span class="event__date--date">01.01.2017</span>
+						<span class="event__date--time">22:00—Late</span>
+					</p>
+					<p class="event__artists">
+						<span>Artist Name 1</span>
+						<span>Artist Name 2</span>
+						<span>Noods Residents</span>
+					</p>
+					<p class="event__location">
+						The Surrey Vaults
+					</p>
+					<p class="event__price">
+						£6
+					</p>
+					<p class="event__description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi laborum optio, amet doloremque architecto voluptatum consectetur fugit delectus accusamus tenetur!
+					</p>
+					<a href="#" class="event__link">
+						More info
+					</a>
+					<a href="#" class="event__link">
+						Buy tickets
+					</a>
+				</div>
+			</section>
+			<!-- Upcoming events ends -->
+		</div>
+		<!-- Inner container for content ends -->
+	</div>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
