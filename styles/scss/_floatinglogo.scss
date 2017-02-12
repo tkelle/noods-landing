@@ -1,0 +1,17 @@
+.floatingLogoContainer {
+	width: 150px;
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+	z-index: 999;
+
+	@include breakpoint(md) {
+		width: 120px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.floatingLogo {
+	width: 100%;
+}

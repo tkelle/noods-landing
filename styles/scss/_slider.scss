@@ -1,7 +1,11 @@
 // Slider
 
 .row--slider {
-	// height: 500px;
+	margin-top: 10rem;
+
+	@include breakpoint(md) {
+		margin-top: 70vh;
+	}
 }
 
 .slide {

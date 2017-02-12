@@ -1,11 +1,83 @@
+// Burger link
+
+.mobileNavTrigger {
+	position: fixed;
+	z-index: 999;
+	left: 3rem;
+	top: 3.3rem;
+	display: none;
+	width: 2rem;
+	height: 2rem;
+
+	@include breakpoint(md) {
+		display: block;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+	
+	& span {
+		width: 2rem;
+		height: 6px;
+		background: $black;
+		display: block;
+		position: absolute;
+		@include transition-md;
+	}
+
+	& span:nth-of-type(1) {
+		top: 0px;
+	}
+
+	& span:nth-of-type(2) {
+		top: 10px;
+	}
+
+	& span:nth-of-type(3) {
+		top: 20px;
+	}
+
+	&.mobileNavTrigger--active {
+		& span:nth-of-type(1) {
+			transform: rotate(45deg);
+			top: 10px;
+		}
+
+		& span:nth-of-type(2) {
+			opacity: 0;
+		}
+
+		& span:nth-of-type(3) {
+			transform: rotate(-45deg);
+			top: 10px;
+		}
+	}
+}
+
 // Navigation
 
 .navContainer {
-	// border: 1px solid orange;
-	width: 200px;
-	float: left;
 	position: fixed;
 	z-index: 999;
+	left: 2rem;
+	top: 2rem;
+
+	@include breakpoint(md) {
+		width: 50%;
+		height: auto;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		background: $white;
+		padding: 2rem;
+		text-align: center;
+		display: none;
+	}
+}
+
+.navContainer--active {
+	display: block;
 }
 
 .navList {

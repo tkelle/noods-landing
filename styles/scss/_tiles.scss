@@ -14,6 +14,10 @@
 			background: rgba($black, 0.3);
 		}
 	}
+
+	@include breakpoint(md) {
+		width: 50%;
+	}
 }
 
 .tile__sizer {
@@ -72,6 +76,19 @@
 			opacity: 1;
 		}
 	}
+
+	@include breakpoint(md) {
+		width: 100%;
+
+		.title--viewAll {
+			padding-left: 4rem;
+		}
+
+		.title--viewAll:before {
+			left: -0.1rem;
+			opacity: 1;
+		}
+	}
 }
 
 .tile__sizer--viewAll {
@@ -79,6 +96,10 @@
 	padding-bottom: 50%;
     position: relative;
     background: $black;
+
+    @include breakpoint(md) {
+    	padding-bottom: 30%;
+    }
 }
 
 .title--viewAll {

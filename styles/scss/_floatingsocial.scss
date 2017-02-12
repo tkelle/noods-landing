@@ -1,0 +1,38 @@
+.socialContainer {
+	position: fixed;
+	bottom: 2rem;
+	left: 2rem;
+	z-index: 999;
+}
+
+.socialList {
+	@include breakpoint(md) {
+		display: inline-block;
+		margin: 0 auto;
+	}
+}
+
+.socialList__item {
+	float: left;
+	width: 2rem;
+	margin-right: 0.5rem;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+.socialList__link {
+
+	& img {
+		display: block;
+		width: 2rem;
+		@include transition-sm;
+	}
+
+	&:hover {
+		& img {
+			transform: scale(1.1);
+		}
+	}
+}
