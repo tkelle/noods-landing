@@ -11,6 +11,9 @@
 @import 'floatinglogo';
 @import 'floatingsocial';
 @import 'cube';
+@import 'shows';
+@import 'residents';
+@import 'resident';
 
 /* Main styling begins */
 
@@ -91,7 +94,7 @@ html {
 }
 
 .row--right {
-	padding-left: 30%;
+	padding-left: 20%;
 	
 	@include breakpoint(md) {
 		padding-left: 0rem;
@@ -100,8 +103,8 @@ html {
 }
 
 .row--left {
-	padding-right: 20%;
-	padding-left: 15%;
+	padding-right: 15%;
+	padding-left: 10%;
 
 	@include breakpoint(md) {
 		padding-left: 0rem;
@@ -250,10 +253,6 @@ html {
 		background-image: url(../../img/icons/ticket.svg);
 	}
 }
-
-// Store row
-
-
 
 // Background images
 

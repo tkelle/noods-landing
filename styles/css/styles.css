@@ -16,7 +16,9 @@ html {
 .title--rowTitle {
   display: block;
   position: relative;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  width: 100%; }
 
 .title--small {
   font-size: 2rem; }
@@ -93,7 +95,12 @@ html {
   margin-bottom: 0.5rem;
   text-decoration: none;
   transition: ease-in-out 300ms;
-  position: relative; }
+  position: relative;
+  color: #262425; }
+  .navList__link:visited {
+    color: #262425; }
+  .navList__link:active {
+    color: #262425; }
   .navList__link:before {
     content: ' ';
     position: absolute;
@@ -175,11 +182,14 @@ html {
 
 .tile {
   width: 33.33%;
-  float: left; }
+  float: left;
+  padding: 0.5rem; }
   .tile:hover .tile__image {
     transform: scale(1.1); }
   .tile:hover .tile__background:after {
     background: rgba(38, 36, 37, 0.3); }
+  .tile:hover .title--show {
+    color: #0000FF; }
   @media (max-width: 768px) {
     .tile {
       width: 50%; } }
@@ -237,14 +247,20 @@ html {
         left: -0.1rem;
         opacity: 1; } }
 
+.tile--viewAllFull {
+  width: 100%; }
+
 .tile__sizer--viewAll {
   width: 100%;
-  padding-bottom: 50%;
+  padding-bottom: calc(50% - 0.5rem);
   position: relative;
   background: #262425; }
   @media (max-width: 768px) {
     .tile__sizer--viewAll {
       padding-bottom: 30%; } }
+
+.tile__sizer--viewAllFull {
+  padding-bottom: 30%; }
 
 .title--viewAll {
   display: inline-block;
@@ -270,7 +286,10 @@ html {
   position: fixed;
   top: 2rem;
   right: 2rem;
-  z-index: 999; }
+  z-index: 999;
+  transition: ease-in-out 300ms; }
+  .floatingLogoContainer:hover {
+    opacity: 0.8; }
   @media (max-width: 768px) {
     .floatingLogoContainer {
       width: 120px;
@@ -355,6 +374,98 @@ html {
 .cube {
   animation: spin 5s infinite linear; }
 
+.row--allShows {
+  margin-top: 10rem; }
+
+.row--flex {
+  display: flex;
+  flex-wrap: wrap; }
+
+.tile--flex {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem; }
+
+.tile--link {
+  text-decoration: none; }
+  .tile--link:active, .tile--link:hover, .tile--link:visited {
+    text-decoration: none; }
+
+.title--show {
+  margin: 0.5rem 0;
+  transition: ease-in-out 300ms; }
+
+.show__date {
+  font-family: Chivo;
+  color: #262425;
+  font-size: 1.2rem;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 1rem;
+  position: relative; }
+
+.show__date--date {
+  display: block;
+  margin-bottom: 0.2rem; }
+
+.show__date--time {
+  display: block; }
+
+.show__link {
+  text-decoration: none;
+  font-family: Chivo;
+  color: #262425;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-left: 1.5rem;
+  margin-right: 1rem; }
+  .show__link:active, .show__link:visited {
+    text-decoration: none;
+    color: #262425; }
+
+.show__link--play {
+  position: relative; }
+  .show__link--play:before {
+    content: ' ';
+    position: absolute;
+    left: -1.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: 1.2rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../../img/icons/play.svg); }
+
+.row--allResidents {
+  margin-top: 5rem; }
+
+.row--resident {
+  margin-top: 10rem; }
+
+.resident__photoContainer {
+  width: 100%;
+  margin-bottom: 1.5rem; }
+
+.resident__photoSizer {
+  width: 100%;
+  padding-bottom: 60%;
+  position: relative;
+  background: red; }
+
+.resident__photo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
+.resident__description {
+  font-family: Chivo;
+  color: #262425;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem; }
+
 /* Main styling begins */
 html {
   background: #F7F7F7; }
@@ -411,15 +522,15 @@ html {
       margin-bottom: 10rem; } }
 
 .row--right {
-  padding-left: 30%; }
+  padding-left: 20%; }
   @media (max-width: 768px) {
     .row--right {
       padding-left: 0rem;
       padding-right: 0rem; } }
 
 .row--left {
-  padding-right: 20%;
-  padding-left: 15%; }
+  padding-right: 15%;
+  padding-left: 10%; }
   @media (max-width: 768px) {
     .row--left {
       padding-left: 0rem;

@@ -1,0 +1,91 @@
+// Row and tile styles
+
+.row--allShows {
+	margin-top: 10rem;
+}
+
+.row--flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tile--flex {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
+}
+
+.tile--link {
+	text-decoration: none;
+
+	&:active, &:hover, &:visited {
+		text-decoration: none;
+	}
+}
+
+// Show metadata
+
+.show__metadata {
+
+}
+
+// Show title
+
+.title--show {
+	margin: 0.5rem 0;
+	@include transition-md;
+}
+
+// Show date
+
+.show__date {
+	font-family: Chivo;
+	color: $black;
+	font-size: 1.2rem;
+	font-weight: 400;
+	display: block;
+	margin-bottom: 1rem;
+	position: relative;
+}
+
+.show__date--date {
+	display: block;
+	margin-bottom: 0.2rem;
+}
+
+.show__date--time {
+	display: block;
+}
+
+// Show link/play button
+
+.show__link {
+	text-decoration: none;
+	font-family: Chivo;
+	color: $black;
+	font-size: 1.2rem;
+	font-weight: 400;
+	margin-left: 1.5rem;
+	margin-right: 1rem;
+
+	&:active, &:visited {
+		text-decoration: none;
+		color: $black;
+	}
+}
+
+.show__link--play {
+	position: relative;
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		left: -1.5rem;
+		width: 1.2rem;
+		height: 1.2rem;
+		background-size: 1.2rem;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-image: url(../../img/icons/play.svg);
+	}
+}

@@ -50,17 +50,17 @@
 	<nav class="navContainer">
 		<ul class="navList pure-u-1">
 			<li class="navList__item">
-				<a href="#" class="navList__link">
+				<a href="shows.php" class="navList__link">
 					Shows
 				</a>
 			</li>
 			<li class="navList__item">
-				<a href="#" class="navList__link">
+				<a href="events.php" class="navList__link">
 					Events
 				</a>
 			</li>
 			<li class="navList__item">
-				<a href="#" class="navList__link">
+				<a href="residents.php" class="navList__link">
 					Residents
 				</a>
 			</li>
@@ -90,7 +90,7 @@
 	</nav>
 	<!-- Sidebar navigation ends -->
 	<!-- Floating logo -->
-	<div class="floatingLogoContainer">
+	<a href="index.php" class="floatingLogoContainer">
 		<img src="img/logo.svg" alt="" class="floatingLogo">
-	</div>
+	</a>
 	<!-- Floating logo ends -->

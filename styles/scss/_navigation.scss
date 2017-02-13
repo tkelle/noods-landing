@@ -97,6 +97,15 @@
 	text-decoration: none;
 	@include transition-md;
 	position: relative;
+	color: $black;
+
+	&:visited {
+		color: $black;
+	}
+
+	&:active {
+		color: $black;
+	}
 
 	&:before {
 		content: ' ';
@@ -124,7 +133,6 @@
 		&:before {
 			left: -0.1rem;
 			opacity: 1;
-			// transform: rotate(0deg);
 		}
 	}
 }

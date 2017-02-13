@@ -1,0 +1,54 @@
+// Row styles
+
+.row--resident {
+	margin-top: 10rem;
+}
+
+// Resident photo
+
+.resident__photoContainer {
+	width: 100%;
+	margin-bottom: 1.5rem;
+}
+
+.resident__photoSizer {
+	width: 100%;
+	padding-bottom: 60%;
+	position: relative;
+	background: red;
+}
+
+.resident__photo {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+// Resident description
+
+.resident__descriptionContainer {
+
+}
+
+.resident__description {
+	font-family: Chivo;
+	color: $black;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 400;
+	margin-bottom: 2rem;
+}
+
+// Resident's latest mixes
+
+// .tile--viewAllFull {
+// 	width: 100%;
+// }
+
+// .tile__sizer--viewAllFull {
+// 	width: 100%;
+// 	padding-bottom: 50%;
+// 	position: relative;
+// 	background: $black;
+// }
