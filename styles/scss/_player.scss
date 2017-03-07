@@ -1,0 +1,72 @@
+// Main container
+
+.playerContainer {
+	position: fixed;
+	bottom: 1rem;
+	left: 1rem;
+	right: 1rem;
+	background: rgba($black, 0.9);
+	// border: 1px solid green;
+}
+
+// Play button
+
+.player__playContainer {
+	width: 3rem;
+	float: left;
+
+	&:hover {
+
+		.player__playButton {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.player__playButton {
+	width: 100%;
+	@include transition-sm;
+}
+
+// Volume button
+
+.player__volumeContainer {
+	width: 3rem;
+	float: left;
+
+	&:hover {
+
+		.player__volumeButton {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.player__volumeButton {
+	width: 100%;
+	@include transition-sm;
+}
+
+// Metadata
+
+.player__metadataContainer {
+	width: calc(100% - 6.5rem);
+	float: left;
+	margin-top: 0.6rem;
+}
+
+.player__subtitle {
+	font-family: Chivo;
+	color: $white;
+	font-size: 0.8rem;
+	font-weight: 400;
+	margin-bottom: 0.2rem;
+}
+
+.player__trackTitle {
+	font-family: Rakkas;
+	color: $white;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	font-weight: 400;
+}

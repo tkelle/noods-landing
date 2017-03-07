@@ -4,16 +4,6 @@
 @import 'fonts';
 @import 'colors';
 @import 'typography';
-@import 'navigation';
-@import 'slider';
-@import 'tiles';
-@import 'shopslide';
-@import 'floatinglogo';
-@import 'floatingsocial';
-@import 'cube';
-@import 'shows';
-@import 'residents';
-@import 'resident';
 
 /* Main styling begins */
 
@@ -21,247 +11,347 @@ html {
 	background: $white;
 }
 
-// Background shader
+// BG container
 
-.bgShader {
+.backgroundContainer {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+// Gradient bubble
+
+.gradientContainer {
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	bottom: 5%;
+	right: 20%;
+	animation-name: pulse;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+}
+
+.gradientColor {
+	background:
+		linear-gradient(
+			cyan,
+			transparent
+		),
+		linear-gradient(
+			-45deg,
+			magenta,
+			transparent
+		),
+		linear-gradient(
+			45deg,
+			yellow,
+			transparent
+		);
+	background-blend-mode: multiply;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba($black, 0.4);
-	display: none;
-	z-index: 999;
+	border-radius: 200px;
+	animation-name: rotation;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
 }
 
-.bgShader--active {
-	display: block;
+@keyframes rotation {
+    0%   {
+		transform: rotate(0deg);
+    }
+    100% {
+		transform: rotate(360deg);
+    }
 }
 
-// Background container
-
-.bgContainer {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
+@keyframes pulse {
+    0%   {
+		transform: scale(1);
+    }
+    100% {
+		transform: scale(1.2);
+    }
 }
 
-.randomBgImage {
-	@include transition-md;
+// Cube
+
+.paneContainer {
+	margin: 100px auto;
+	perspective: 800px;
 }
 
-.bgImage--twistGrid {
-	width: 200px;
+.paneOuter {
+	position: relative;
+	height: 400px;
+	width: 400px;
+	animation: rotate-1 25s infinite linear;
+	transform-style: preserve-3d;
 }
 
-.bgImage--chain {
-	width: 100px;
+.paneInner {
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	animation: rotate-2 15s infinite linear;
+	background: rgba(0,102,153,.5);
+	background-image: url(../../img/marble.jpg);
+	transform: translateZ(100px);
 }
 
-// Main container
+@keyframes rotate-1 {
+	0% {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+	100% {
+		transform: rotateX(1080deg) rotateY(360deg);
+	}
+}
 
-.mainContainer {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	padding: 3rem;
-	border: 1rem solid $black;
-	overflow: scroll;
+@keyframes rotate-2 {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+// Pyramid
+
+.pyramidContainer {
+	width: 0px; 
+	height: 0px;
+	position: absolute;
+	top: 10%;
+	right: 30%;
+	perspective: 1200px;
+	perspective-origin: 50% 50%;
+	animation: rotate-2 15s infinite linear;
+}
+
+.pyramid {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: rotateX(75deg) rotate(65deg);
+  animation: pyramidRotate 6s linear infinite;
+}
+
+.triangle {
+  transform-style: preserve-3d;
+  width: 0; 
+  height: 0;
+  background: none;
+  opacity: 0.8;
+}
+
+.triangle:before {
+  content: "";
+  position: absolute;
+  height: 0; 
+  width: 0;
+  border-style: solid;
+  border-width: 176px 75px 0 75px;
+}
+
+.side-1 { 
+  transform: translateX(0) rotateY(115.2deg) rotateZ(90deg); 
+  &:before { 
+    border-color: cyan transparent transparent transparent; 
+  }
+}
+
+.side-2 {
+  transform: translateX(150px) rotateZ(90deg) rotateX(64.8deg);
+  &:before { 
+    border-color: magenta transparent transparent transparent; 
+  }
+}
+
+.side-3 {
+  transform: translateZ(0) rotateX(64.8deg); 
+  &:before { 
+    border-color: yellow transparent transparent transparent; 
+  } 
+}
+
+.side-4 {  
+  transform: translateY(150px) rotateX(115.2deg); 
+  &:before { 
+    border-color: lightgreen transparent transparent transparent; 
+  }
+}
+
+
+@keyframes pyramidRotate { 
+  100% { 
+  	transform: rotateX(75deg) rotate(425deg); 
+  } 
+}
+
+
+// Conent container
+
+.contentContainer {
+	position: absolute;
+	top: 50%;
+	left: 4rem;
+	width: 70%;
+	transform: translateY(-50%);
 
 	@include breakpoint(md) {
+		width: 100%;
+		left: 0;
 		padding: 1rem;
 	}
 }
 
-// Inner container for content
-
-.innerContainer {
-	width: 100%;
-	float: left;
+.logoContainer {
+	margin-bottom: 2rem;
 }
 
-// Content rows
-
-.row {
-	width: 100%;
-	margin-bottom: 20rem;
-	clear: both;
-	float: left;
-
-	@include breakpoint(md) {
-		margin-bottom: 10rem;
-	}
+.copyContainer {
+	margin-bottom: 2rem;
 }
 
-.row--right {
-	padding-left: 20%;
-	
-	@include breakpoint(md) {
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-}
-
-.row--left {
-	padding-right: 15%;
-	padding-left: 10%;
-
-	@include breakpoint(md) {
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-}
-
-// Event poster
-
-.eventWrapper {
-	background: $white;
-}
-
-.poster {
-	width: 50%;
-	float: left;
-
-	@include breakpoint(md) {
-		width: 100%;
-		float: right;
-	}
-}
-
-.poster--image {
-	display: block;
-
-	& img {
-		width: 100%;
-	}
-}
-
-.poster--metadata {
-	padding-left: 1rem;
-	// text-shadow: 
-	// 	0px 2px 2px $white, 
-	// 	0px -2px 2px $white,
-	// 	2px 0px 2px $white,
-	// 	-2px 0px 2px $white;
-}
-
-.event__title {
-	font-family: Chivo;
-	color: $black;
-	font-size: 2rem;
-	font-weight: 600;
-	display: block;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
-
-.event__artists {
+.landingCopy {
 	font-family: Chivo;
 	color: $black;
 	font-size: 1.5rem;
+	line-height: 2rem;
 	font-weight: 400;
-	display: block;
-	margin-bottom: 1rem;
 
 	& span {
 		display: block;
+		margin-bottom: 1rem;
 	}
 }
 
-.event__location {
-	font-family: Chivo;
-	color: $black;
-	font-size: 1.5rem;
-	font-weight: 400;
-	display: block;
+// Player
+
+.playerContainer {
+	background: $black;
+	float: left;
+	width: 100%;
 	margin-bottom: 1rem;
 }
 
-.event__date {
-	font-family: Chivo;
-	color: $black;
-	font-size: 1.5rem;
-	font-weight: 400;
+.player__controlContainer {
+	width: 80px;
+	height: 80px;
 	display: block;
-	margin-bottom: 1rem;
-	position: relative;
+	float: left;
+	background-size: 5rem;
+	background-repeat: no-repeat;
+	background-position: center center;
+	@include transition-sm;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
-.event__price {
-	font-family: Chivo;
-	color: $black;
-	font-size: 1.5rem;
-	font-weight: 400;
-	display: block;
-	margin-bottom: 1rem;
+.player__controlContainer--play {
+	background-image: url(../../img/icons/play-button.svg);
 }
 
-.event__description {
-	width: 80%;
-	font-family: Chivo;
-	color: $black;
-	font-size: 1.2rem;
-	line-height: 1.5rem;
-	font-weight: 400;
-	display: block;
-	margin-bottom: 1rem;
+.player__controlContainer--pause {
+	background-image: url(../../img/icons/pause-button.svg);
 }
 
-.event__link {
+.player__controlContainer--chat {
+	background-image: url(../../img/icons/chat-button.svg);
+}
+
+.player__metadataContainer {
+	width: calc(100% - 160px);
+	float: left;
+	margin-top: 1rem;
+}
+
+.player__title {
+	font-family: Chivo;
+	color: $white;
+	font-size: 1rem;
+	font-weight: 400;
+	margin-bottom: 0.2rem;
+}
+
+.player__nowPlaying {
+	font-family: Rakkas;
+	color: $white;
+	font-size: 2rem;
+	letter-spacing: 1px;
+	font-weight: 400;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// Links
+
+.socialLinksContainer {
+
+}
+
+.socialLink {
+	font-family: Chivo;
+	color: $black;
+	font-size: 1rem;
+	font-weight: 400;
 	text-decoration: none;
-	font-family: Chivo;
-	color: $black;
-	font-size: 1.2rem;
-	font-weight: 400;
-	margin-left: 1.5rem;
-	margin-right: 1rem;
-
-	&:active, &:visited {
-		text-decoration: none;
-		color: $black;
-	}
-}
-
-.event__link--info {
 	position: relative;
+	margin-right: 1.5rem;
 
 	&:before {
 		content: ' ';
 		position: absolute;
-		left: -1.5rem;
-		width: 1.2rem;
-		height: 1.2rem;
-		background-size: 1.2rem;
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-image: url(../../img/icons/info.svg);
+		height: 2px;
+		background: $black;
+		left: 0;
+		right: 0;
+		bottom: -8px;
+		opacity: 0;
+		@include transition-sm;
 	}
-}
-
-.event__link--tickets {
-	position: relative;
-
-	&:before {
-		content: ' ';
-		position: absolute;
-		left: -1.5rem;
-		width: 1.2rem;
-		height: 1.2rem;
-		background-size: 1.2rem;
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-image: url(../../img/icons/ticket.svg);
-	}
-}
-
-// Background images
-
-.randomBgImage {
-	position: absolute;
-}
-
-.parallaxWrapper {
 	
+	&:after {
+		position: absolute;
+		content: ' ';
+		background: $black;
+		width: 8px;
+		height: 8px;
+	    right: -18px;
+	    top: 6px;
+	    border-radius: 4px;
+	}
+
+	&:last-of-type {
+		&:after {
+			display: none;
+		}
+	}
+
+	&:hover {
+		&:before {
+			opacity: 1;
+			bottom: -2px;
+		}
+	}
 }
 
+.socialLink:visited, .socialLink:active {
+	text-decoration: none;
+}
 
